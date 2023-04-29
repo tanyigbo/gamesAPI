@@ -16,13 +16,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(unique = true)
     private String username;
 
     @Column
     private String password;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "user",orphanRemoval = true)
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Game> gameList;
