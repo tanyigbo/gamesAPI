@@ -28,11 +28,10 @@ public class Genre {
     public Genre() {
     }
 
-    public Genre(Long id, String name, String description, List<Game> gameList) {
+    public Genre(Long id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.gameList = gameList;
     }
 
     public Long getId() {
