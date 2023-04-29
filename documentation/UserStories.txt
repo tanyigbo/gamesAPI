@@ -1,0 +1,28 @@
+As a new user, I want to be able to make an account to be able to use the app.
+- GIVEN that the user is not registered WHEN the user enters a unique username and a password, THEN the user will be registered with the provided username and password.
+- GIVEN that the user is not registered, WHEN the user enters a duplicated username and a password, THEN an error will inform the user that the username is already in use.
+
+
+As a user, I want to be able to log in to my account to be able to use the app.
+- GIVEN that the user is registered, WHEN the user enters a correct username and password, THEN the user will be logged into the user account associated with the provided username and password.
+- GIVEN that the user is registered, WHEN the user enters an incorrect username and/or password, THEN an error will inform the user that the username and/or password is incorrect.
+
+
+As a user, I want to be able to add games to my list of games to keep track of which games I have played and their ratings.
+- GIVEN that the user is logged into their account, WHEN the user enters the information for a previously unregistered game, THEN that previously unregistered game will be added to the user's game list.
+- GIVEN that the user is logged into their account, WHEN the user enters the information for a previously registered game, THEN an error will inform the user that the information provided already exists.
+- GIVEN that the user is logged into their account, WHEN the user enters game information where the genre is not previously registered, THEN a new genre will be added.
+
+
+As a registered user, I want to be able to see my list of games so that I can see the rating and completion status of the games on my list.
+- GIVEN that the user is logged into their account, WHEN the user requests their game's list,THEN the list of games registered to the user will be displayed.
+
+
+As a registered user, I want to be able to remove a game from my game's list so that I can delete games I no longer want to keep track of.
+- GIVEN that the user is logged into their account and the requested game is registered to the user, WHEN the user requests the game be removed from their game list, THEN the game will be removed from the user's game list and displayed.
+- GIVEN that the user is logged into their account and the requested game is not registered to the user, WHEN the user requests the game be removed from their game list, THEN an error will inform the user that the game information does not exist.
+
+
+As a registered user, I want to be able to update the information of my favorite games so that the status of my game list will be up-to-date.
+- GIVEN that the user is logged into their account and the requested game is registered to the user, WHEN the user requests the game be updated, THEN the game will be updated with the information provided by the user.
+- GIVEN that the user is logged into their account and the requested game is not registered to the user, WHEN the user requests the game be updated, THEN an error will inform the user that the game information does not exist.
