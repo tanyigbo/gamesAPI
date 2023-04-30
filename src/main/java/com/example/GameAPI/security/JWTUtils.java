@@ -1,6 +1,5 @@
-package com.example.GameAPI.service;
+package com.example.GameAPI.security;
 
-import com.example.GameAPI.security.MyUserDetails;
 import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

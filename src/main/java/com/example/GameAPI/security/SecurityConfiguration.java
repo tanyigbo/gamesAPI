@@ -1,6 +1,5 @@
 package com.example.GameAPI.security;
 
-import com.example.GameAPI.service.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
