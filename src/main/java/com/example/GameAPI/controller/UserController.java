@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "/api/users")
 public class UserController {
 
-    private UserService userService;
+    private final UserService userService;
 
     @Autowired
     public UserController(UserService userService){
@@ -23,7 +23,7 @@ public class UserController {
      */
     // http://localhost:9094/api/users
     @PostMapping(path = "/register")
-    public User createUser(@RequestBody User userObject){
+    public User registerUser(@RequestBody User userObject){
         return userService.createUser(userObject);
     }
 
