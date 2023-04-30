@@ -24,18 +24,18 @@ public class SecurityConfiguration {
     private MyUserDetailsService myUserDetailsService;
 
     @Autowired
-    public SecurityConfiguration(MyUserDetailsService myUserDetailsService){
+    public void setMyUserDetailsService(MyUserDetailsService myUserDetailsService) {
         this.myUserDetailsService = myUserDetailsService;
     }
 
     @Bean
-    public JwtRequestFilter authJwtRequestFilter(){
+    public JwtRequestFilter authJwtRequestFilter() {
         return new JwtRequestFilter();
     }
 
-
+    // register user
     @Bean
-    public BCryptPasswordEncoder passwordEncoder(){
+    public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
@@ -46,9 +46,9 @@ public class SecurityConfiguration {
                 .permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS).
-                and().csrf().disable();
-       http.addFilterBefore(authJwtRequestFilter(), UsernamePasswordAuthenticationFilter.class);
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and().csrf().disable();
+        http.addFilterBefore(authJwtRequestFilter(), UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 
