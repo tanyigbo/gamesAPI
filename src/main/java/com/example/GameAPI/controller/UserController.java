@@ -3,10 +3,7 @@ package com.example.GameAPI.controller;
 import com.example.GameAPI.model.User;
 import com.example.GameAPI.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/api/users")
@@ -25,7 +22,7 @@ public class UserController {
      * @return Newly created user object
      */
     // http://localhost:9094/api/users
-    @PutMapping(path = "/register")
+    @PostMapping(path = "/register")
     public User createUser(@RequestBody User userObject){
         return userService.createUser(userObject);
     }
