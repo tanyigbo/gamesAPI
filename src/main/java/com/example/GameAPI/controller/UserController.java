@@ -30,6 +30,13 @@ public class UserController {
         return userService.createUser(userObject);
     }
 
+    /**
+     * A Post Request to authenticate and log in user
+     * Throws an error if user login information is incorrect
+     *
+     * @param loginRequest User data to authenticate
+     * @return Authentication token
+     */
     // http://localhost:9094/auth/users/login
     @PostMapping(path = "/login")
     public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
