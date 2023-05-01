@@ -36,8 +36,8 @@ public class GenreController {
      * @param genreObject The data used to create new genre entry
      * @return The newly created genre entry
      */
-    // http://localhost:9094/api/genres
-    @PostMapping(path = "/genres")
+    // http://localhost:9094/api/genres/new
+    @PostMapping(path = "/genres/new")
     public Genre createGenre(@RequestBody Genre genreObject) {
         return genreService.createGenre(genreObject);
     }
