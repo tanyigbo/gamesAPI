@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface GenreRepository extends JpaRepository<Genre,Long> {
+public interface GenreRepository extends JpaRepository<Genre, Long> {
 
     // SELECT * FROM genres WHERE id = genreId
     Optional<Genre> findGenreById(Long genreId);

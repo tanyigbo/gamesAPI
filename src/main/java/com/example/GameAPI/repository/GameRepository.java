@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface GameRepository extends JpaRepository<Game,Long> {
+public interface GameRepository extends JpaRepository<Game, Long> {
 
     // SELECT * FROM games WHERE name = gameName;
     Optional<Game> findGameByName(String gameName);
