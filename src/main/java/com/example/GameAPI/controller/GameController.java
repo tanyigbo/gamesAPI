@@ -30,4 +30,9 @@ public class GameController {
         return gameService.findAllGamesByUser();
     }
 
+    // http://localhost:9094/api/games/1
+    @GetMapping(path = "/games/{gameId}")
+    public Game getUserGameById(@PathVariable Long gameId){
+        return gameService.findUserGameById(gameId);
+    }
 }
