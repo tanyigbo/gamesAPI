@@ -42,6 +42,7 @@ public class GenreService {
      * Throws and exception if a genre with provided name already exists
      *
      * @param genreObject A genre object containing data for new entry
+     * @return The saved genre object
      */
     public Genre createGenre(Genre genreObject) {
         Optional<Genre> genre = genreRepository.findGenreByName(genreObject.getName());
