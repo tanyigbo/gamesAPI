@@ -5,6 +5,8 @@ import com.example.GameAPI.service.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "/api")
 public class GenreController {
@@ -36,8 +38,19 @@ public class GenreController {
      */
     // http://localhost:9094/api/genres
     @PostMapping(path = "/genres")
-    public Genre createGenre(@RequestBody Genre genreObject){
+    public Genre createGenre(@RequestBody Genre genreObject) {
         return genreService.createGenre(genreObject);
+    }
+
+    /**
+     * Get Request for all genres in the genre entity
+     *
+     * @return A list of all genres
+     */
+    // http://localhost:9094/api/genres
+    @GetMapping(path = "/genres")
+    public List<Genre> getAllGenres() {
+        return genreService.findAllGenres();
     }
 
 }

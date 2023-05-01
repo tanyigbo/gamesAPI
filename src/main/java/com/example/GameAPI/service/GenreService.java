@@ -7,6 +7,7 @@ import com.example.GameAPI.repository.GenreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -49,5 +50,14 @@ public class GenreService {
         } else {
             throw new InformationExistException("Genre with name " + genreObject.getName() + " already exists.");
         }
+    }
+
+    /**
+     * Find and returns all genres in the genre entity
+     *
+     * @return List of all genres
+     */
+    public List<Genre> findAllGenres() {
+        return genreRepository.findAll();
     }
 }
