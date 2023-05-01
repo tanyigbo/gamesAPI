@@ -24,7 +24,6 @@ public class Genre {
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Game> gameList;
 
-
     public Genre() {
     }
 
