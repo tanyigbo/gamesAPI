@@ -1,15 +1,16 @@
 # Game Tracker API
 
-An API that lets users track the games they have played and provides them a rating
-
 ### Table of Contents
-
-- [User Stories](#stories)
-- [Endpoints](#endpoints)
-- [Technologies Used](#tech)
+- [Description](#description)
+- [User Stories](#user-stories)
+- [Endpoints](#api-endpoints)
+- [Technologies Used](#technologies-used)
 - [Dependencies](#dependencies)
 
-### User Stories <a name="stories"></a>
+### Description
+An API that lets users track the games they have played and provides them a rating
+
+### User Stories
 
 - As a new user, I want to be able to make an account to be able to use the app.
 - As a user, I want to be able to log in to my account to be able to use the app.
@@ -22,7 +23,7 @@ An API that lets users track the games they have played and provides them a rati
 - As a registered user, I want to be able to update the information of my favorite games so that the status of my game
   list will be up-to-date.
 
-### Endpoints <a name="endpoints"></a>
+### API Endpoints
 
 | Request Type | URL                   | Functionality                  | Access  |
 |--------------|-----------------------|--------------------------------|---------|
@@ -38,7 +39,7 @@ An API that lets users track the games they have played and provides them a rati
 | PUT          | /api/games/{gameId}   | User updates game              | Private |
 | DELETE       | /api/games/{gameId}   | User deletes game              | Private |
 
-### Technologies Used <a name="tech"></a>
+### Technologies Used
 
 - [Visual Paradigm Online](https://online.visual-paradigm.com/)
 - [Spring Initializer](https://start.spring.io/)
@@ -48,7 +49,7 @@ An API that lets users track the games they have played and provides them a rati
 - [PostgresSQL Database](https://www.postgresql.org/)
 - [PostMan](https://www.postman.com/)
 
-### Dependencies <a name="dependencies"></a>
+### Dependencies
 - [Spring Boot Starter](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter/3.0.6)  
 - [Spring Boot Starter Test](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test/3.0.6)  
 - [Spring Boot Starter Web](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web/3.0.5)  
