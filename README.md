@@ -35,7 +35,7 @@ An API that lets users track the games they have played and provides them a rati
 
 ### Technologies Used <a name="tech"></a>
 
-- [Visual Paradigm Online]
+- [Visual Paradigm Online](https://online.visual-paradigm.com/) 
 - [Spring Initializer] 
 - [IntelliJ IDE]
 - [Git/GitHub]
