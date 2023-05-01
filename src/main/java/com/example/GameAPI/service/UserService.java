@@ -19,7 +19,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-import java.util.logging.Logger;
 
 @Service
 public class UserService {
@@ -29,7 +28,6 @@ public class UserService {
     private JWTUtils jwtUtils;
     private AuthenticationManager authenticationManager;
     private MyUserDetails myUserDetails;
-    private Logger logger = Logger.getLogger(UserService.class.getName());
 
     @Autowired
     public UserService(UserRepository userRepository, @Lazy PasswordEncoder passwordEncoder,
@@ -53,10 +51,8 @@ public class UserService {
     public User createUser(User userObject) {
         Optional<User> user = userRepository.findUserByUsername(userObject.getUsername());
         if (user.isEmpty()) {
-            User newUser = new User();
-            newUser.setUsername(userObject.getUsername());
-            newUser.setPassword(passwordEncoder.encode(userObject.getPassword()));
-            return userRepository.save(newUser);
+            userObject.setPassword(passwordEncoder.encode(userObject.getPassword()));
+            return userRepository.save(userObject);
         } else {
             throw new InformationExistException("Username " + userObject.getUsername() + " already in use.");
         }
@@ -80,22 +76,14 @@ public class UserService {
 
     public ResponseEntity<?> loginUser(LoginRequest loginRequest) {
         try {
-            logger.info("Step 1");
-            System.out.println("Step 1");
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 
-            logger.info("Step 2");
-            System.out.println("Step 2");
             SecurityContextHolder.getContext().setAuthentication(authentication);
             myUserDetails = (MyUserDetails) authentication.getPrincipal();
 
-            logger.info("Step 3");
-            System.out.println("Step 3");
             final String JWT = jwtUtils.generateJwtToken(myUserDetails);
 
-            logger.info("Step 4");
-            System.out.println("Step 4");
             return ResponseEntity.ok(new LoginResponse(JWT));
         } catch (Exception e) {
             return ResponseEntity.ok(new LoginResponse("Error: Username or Password is incorrect."));
