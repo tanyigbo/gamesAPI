@@ -4,6 +4,7 @@
 - [Description](#description)
 - [User Stories](#user-stories)
 - [Endpoints](#api-endpoints)
+- [Entity Relationship Diagram](#entity-relationship-diagram)
 - [Technologies Used](#technologies-used)
 - [Dependencies](#dependencies)
 
@@ -38,6 +39,9 @@ An API that lets users track the games they have played and provides them a rati
 | PUT          | /api/genres/{genreId} | User updates genre description | Private |
 | PUT          | /api/games/{gameId}   | User updates game              | Private |
 | DELETE       | /api/games/{gameId}   | User deletes game              | Private |
+
+### Entity Relationship Diagram
+![Database-ERD.png](documentation%2FDatabase-ERD.png)
 
 ### Technologies Used
 
