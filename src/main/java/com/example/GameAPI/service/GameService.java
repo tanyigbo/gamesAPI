@@ -1,6 +1,7 @@
 package com.example.GameAPI.service;
 
 import com.example.GameAPI.exception.InformationExistException;
+import com.example.GameAPI.exception.InformationNotFoundException;
 import com.example.GameAPI.model.Game;
 import com.example.GameAPI.model.User;
 import com.example.GameAPI.repository.GameRepository;
@@ -64,4 +65,19 @@ public class GameService {
         return getCurrentLoggedInUser().getGameList();
     }
 
+    /**
+     * Finds the game object that belongs to active user and has id matching provided gameId
+     * Throws an error if there is no game satisfying both conditions
+     *
+     * @param gameId The id of game belonging to user
+     * @return Game Object
+     */
+    public Game findUserGameById(Long gameId) {
+        Optional<Game> game = gameRepository.findGameByIdAndUserId(gameId, getCurrentLoggedInUser().getId());
+        if (game.isPresent()) {
+            return game.get();
+        } else {
+            throw new InformationNotFoundException("No game with ID " + gameId + " belongs to active user.");
+        }
+    }
 }
