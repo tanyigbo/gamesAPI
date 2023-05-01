@@ -74,6 +74,13 @@ public class UserService {
         }
     }
 
+    /**
+     * Authenticates user login request and provides JWT token on login
+     * Throws an exception is login request data is incorrect
+     *
+     * @param loginRequest
+     * @return
+     */
     public ResponseEntity<?> loginUser(LoginRequest loginRequest) {
         try {
             Authentication authentication = authenticationManager.authenticate(
