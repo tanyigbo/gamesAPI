@@ -10,3 +10,6 @@ Technologies Used
 - Spring Data JPA 
 - PgAdmin PostgresSQL Database 
 - PostMan
+
+Unsolved Problem
+- Wanted to have games be a many-to-many relationship, but was losing too much time researching the topic.
