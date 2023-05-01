@@ -80,4 +80,18 @@ public class GameService {
             throw new InformationNotFoundException("No game with ID " + gameId + " belongs to active user.");
         }
     }
+
+    /**
+     * Finds the game object belonging to active user and has matching provided gameId
+     * Updates the game's rating to data provided in gameObject
+     *
+     * @param gameId The id of the game to update
+     * @param gameObject A game object with data to be updated to
+     * @return The newly updated game object
+     */
+    public Game updateUserGameRatingById(Long gameId, Game gameObject){
+        Game game = findUserGameById(gameId);
+        game.setRating(gameObject.getRating());
+        return gameRepository.save(game);
+    }
 }
