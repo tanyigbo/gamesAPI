@@ -1,9 +1,9 @@
 package com.example.GameAPI.controller;
 
+import com.example.GameAPI.model.Genre;
 import com.example.GameAPI.service.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/api")
@@ -16,5 +16,14 @@ public class GenreController {
         this.genreService = genreService;
     }
 
-
+    /**
+     * Get Request for a Genre Object with an id matching the provided genreId
+     * @param genreId The id that returned Genre Object should have
+     * @return A Genre object from the Genre table with an id matching genreId
+     */
+    @GetMapping(path = "/genres/1")
+    // http://localhost:9094/api/genres/1
+    public Genre getGenreById(@PathVariable Long genreId){
+        return genreService.findGenreById(genreId);
+    }
 }
