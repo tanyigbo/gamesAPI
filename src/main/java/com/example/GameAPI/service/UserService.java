@@ -25,8 +25,8 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-    private JWTUtils jwtUtils;
-    private AuthenticationManager authenticationManager;
+    private final JWTUtils jwtUtils;
+    private final AuthenticationManager authenticationManager;
     private MyUserDetails myUserDetails;
 
     @Autowired
@@ -78,8 +78,8 @@ public class UserService {
      * Authenticates user login request and provides JWT token on login
      * Throws an exception is login request data is incorrect
      *
-     * @param loginRequest
-     * @return
+     * @param loginRequest User login information
+     * @return JWT token
      */
     public ResponseEntity<?> loginUser(LoginRequest loginRequest) {
         try {
