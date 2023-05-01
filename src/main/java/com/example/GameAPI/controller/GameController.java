@@ -14,25 +14,31 @@ public class GameController {
     private final GameService gameService;
 
     @Autowired
-    public GameController(GameService gameService){
+    public GameController(GameService gameService) {
         this.gameService = gameService;
     }
 
     // http://localhost:9094/api/games/1
     @PostMapping(path = "/games/{genreId}")
-    public Game creatGame(@RequestBody Game gameObject, @PathVariable Long genreId){
-        return gameService.createGame(gameObject,genreId);
+    public Game creatGame(@RequestBody Game gameObject, @PathVariable Long genreId) {
+        return gameService.createGame(gameObject, genreId);
     }
 
     // http://localhost:9094/api/games
     @GetMapping(path = "/games")
-    public List<Game> findAllGames(){
+    public List<Game> findAllGames() {
         return gameService.findAllGamesByUser();
     }
 
     // http://localhost:9094/api/games/1
     @GetMapping(path = "/games/{gameId}")
-    public Game getUserGameById(@PathVariable Long gameId){
+    public Game getUserGameById(@PathVariable Long gameId) {
         return gameService.findUserGameById(gameId);
+    }
+
+    // http://localhost:9094/api/games/1
+    @PutMapping(path = "/games/{gameId}")
+    public Game updateUserGameRatingById(@PathVariable Long gameId, @RequestBody Game gameObject) {
+        return gameService.updateUserGameRatingById(gameId, gameObject);
     }
 }
