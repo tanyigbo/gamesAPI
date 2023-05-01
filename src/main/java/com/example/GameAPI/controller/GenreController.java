@@ -53,4 +53,15 @@ public class GenreController {
         return genreService.findAllGenres();
     }
 
+    /**
+     * Put Request to update description of genre with id matching provided genreId
+     * @param genreId The id of the genre to update
+     * @param genreObject The data to update the genre
+     * @return The updated genre
+     */
+    // http://localhost:9094/api/genres
+    @PutMapping(path = "/genres/{genreId}")
+    public Genre updateGenreDescriptionById(@PathVariable Long genreId, @RequestBody Genre genreObject){
+        return genreService.updateGenreDescriptionById(genreId, genreObject);
+    }
 }
