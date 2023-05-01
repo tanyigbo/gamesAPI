@@ -42,7 +42,7 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers(
-                        "/auth/users/register", "/auth/users/login")
+                        "/auth/users/register", "/auth/users/login", "/api/genres")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement()
