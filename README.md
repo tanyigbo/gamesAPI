@@ -36,12 +36,12 @@ An API that lets users track the games they have played and provides them a rati
 ### Technologies Used <a name="tech"></a>
 
 - [Visual Paradigm Online](https://online.visual-paradigm.com/) 
-- [Spring Initializer] 
-- [IntelliJ IDE]
-- [Git/GitHub]
-- [Maven Repository]
-- [PgAdmin PostgresSQL Database]
-- [PostMan]
+- [Spring Initializer](https://start.spring.io/)
+- [IntelliJ IDE](https://www.jetbrains.com/idea/)
+- [Git/GitHub](https://github.com/)
+- [Maven Repository](https://mvnrepository.com/)
+- [PostgresSQL Database](https://www.postgresql.org/)
+- [PostMan](https://www.postman.com/)
 
 ### Dependencies <a name="dependencies"></a>
 -
