@@ -21,9 +21,10 @@ public class GenreController {
      * @param genreId The id that returned Genre Object should have
      * @return A Genre object from the Genre table with an id matching genreId
      */
-    @GetMapping(path = "/genres/1")
+    @GetMapping(path = "/genres/{genreId}")
     // http://localhost:9094/api/genres/1
     public Genre getGenreById(@PathVariable Long genreId){
         return genreService.findGenreById(genreId);
     }
+
 }
