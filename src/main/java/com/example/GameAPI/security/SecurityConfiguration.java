@@ -41,7 +41,8 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers(
-                        "/auth/users/register", "/auth/users/login", "/api/genres")
+                        "/auth/users/register", "/auth/users/login",
+                        "/api/genres", "/api/genres/{genreId}")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement()
