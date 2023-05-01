@@ -1,8 +1,10 @@
 # Game Tracker API
 
 An API that lets users track the games they have played and provides them a rating
+### Table of Contents
+- [Technologies Used](#tech)
 
-## Endpoints
+### Endpoints
 
 | Request Type | URL                   | Functionality                  | Access  |
 |--------------|-----------------------|--------------------------------|---------|
@@ -18,7 +20,7 @@ An API that lets users track the games they have played and provides them a rati
 | PUT          | /api/games/{gameId}   | User updates game              | Private |
 | DELETE       | /api/games/{gameId}   | User deletes game              | Private |
 
-Technologies Used
+### Technologies Used <a name="tech"></a>
 
 - Visual Paradigm Online UML modeler
 - Spring Initializer (start.spring.io)
@@ -28,7 +30,7 @@ Technologies Used
 - Spring Data JPA
 - PgAdmin PostgresSQL Database
 - PostMan
-
+### Dependencies
 Unsolved Problem
 
 - Wanted to have games be a many-to-many relationship, but was losing too much time researching the topic.
