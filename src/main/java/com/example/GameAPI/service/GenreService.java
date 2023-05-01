@@ -61,4 +61,18 @@ public class GenreService {
     public List<Genre> findAllGenres() {
         return genreRepository.findAll();
     }
+
+    /**
+     * Finds the genre with id matching the provided genreId
+     * Updates the description with data provided in genreObject
+     *
+     * @param genreId The id of the genre to update
+     * @param genreObject A genre object with the data to update to
+     * @return The update genre
+     */
+    public Genre updateGenreDescriptionById(Long genreId, Genre genreObject){
+        Genre genre = findGenreById(genreId);
+        genre.setDescription(genreObject.getDescription());
+        return genreRepository.save(genre);
+    }
 }
