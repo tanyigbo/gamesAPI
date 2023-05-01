@@ -85,11 +85,11 @@ public class GameService {
      * Finds the game object belonging to active user and has an id matching provided gameId
      * Updates the game's rating to data provided in gameObject
      *
-     * @param gameId The id of the game to update
+     * @param gameId     The id of the game to update
      * @param gameObject A game object with data to be updated to
      * @return The newly updated game object
      */
-    public Game updateUserGameRatingById(Long gameId, Game gameObject){
+    public Game updateUserGameRatingById(Long gameId, Game gameObject) {
         Game game = findUserGameById(gameId);
         game.setRating(gameObject.getRating());
         return gameRepository.save(game);
@@ -103,7 +103,7 @@ public class GameService {
      * @param gameId The id of the game to be deleted
      * @return The game deleted from game repository
      */
-    public Game deleteUserGameById(Long gameId){
+    public Game deleteUserGameById(Long gameId) {
         Game game = findUserGameById(gameId);
         gameRepository.delete(game);
         return game;
