@@ -2,9 +2,11 @@
 
 An API that lets users track the games they have played and provides them a rating
 ### Table of Contents
+- [Endpoints](#endpoints)
 - [Technologies Used](#tech)
+- [Dependencies](#dependencies)
 
-### Endpoints
+### Endpoints 
 
 | Request Type | URL                   | Functionality                  | Access  |
 |--------------|-----------------------|--------------------------------|---------|
@@ -30,6 +32,7 @@ An API that lets users track the games they have played and provides them a rati
 - Spring Data JPA
 - PgAdmin PostgresSQL Database
 - PostMan
+
 ### Dependencies
 Unsolved Problem
 
