@@ -33,7 +33,6 @@ public class SecurityConfiguration {
         return new JwtRequestFilter();
     }
 
-    // register user
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

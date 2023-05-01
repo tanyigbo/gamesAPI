@@ -14,12 +14,13 @@ public class MyUserDetailsService implements UserDetailsService {
     private final UserService userService;
 
     @Autowired
-    public MyUserDetailsService(UserService userService){
+    public MyUserDetailsService(UserService userService) {
         this.userService = userService;
     }
 
     /**
      * Finds the UserDetails of the user with username matching provided String
+     *
      * @param username The username of active user
      * @return UserDetails of active user
      * @throws UsernameNotFoundException if a user with matching username is not found
