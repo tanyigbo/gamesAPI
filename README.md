@@ -1,5 +1,15 @@
-# gamesAPI
+# Game Tracker API
+
 An API that lets users track the games they have played and provide them a rating
+
+## Endpoint 
+| Request Type | URL                  | Functionality                                                                  | Access  |
+|--------------|----------------------|--------------------------------------------------------------------------------|---------|
+| POST         | /auth/users/register | User registration                                                              | Public  |
+| POST         | /auth/users/login    | User login                                                                     | Public  |
+| POST         | /api/genres          | Creates genre entry                                                            | Private |
+| POST         | /api/games/{gameId}  | Creates game entry                                                             | Private |
+
 
 Technologies Used
 - Visual Paradigm Online UML modeler
