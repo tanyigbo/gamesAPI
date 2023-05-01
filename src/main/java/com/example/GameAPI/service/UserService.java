@@ -53,8 +53,10 @@ public class UserService {
     public User createUser(User userObject) {
         Optional<User> user = userRepository.findUserByUsername(userObject.getUsername());
         if (user.isEmpty()) {
-            userObject.setPassword(passwordEncoder.encode(userObject.getPassword()));
-            return userRepository.save(userObject);
+            User newUser = new User();
+            newUser.setUsername(userObject.getUsername());
+            newUser.setPassword(passwordEncoder.encode(userObject.getPassword()));
+            return userRepository.save(newUser);
         } else {
             throw new InformationExistException("Username " + userObject.getUsername() + " already in use.");
         }
