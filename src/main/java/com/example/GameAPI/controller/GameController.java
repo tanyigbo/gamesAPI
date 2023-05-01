@@ -67,9 +67,16 @@ public class GameController {
         return gameService.updateUserGameRatingById(gameId, gameObject);
     }
 
+    /**
+     * Finds a game that belongs to active user and has an id matching provided gameId
+     * Deletes game from game repository
+     *
+     * @param gameId The id of the game to delete
+     * @return The deleted game
+     */
     // http://localhost:9094/api/games/1
     @DeleteMapping(path = "/games/{gameId}")
-    public Game deleteUserGameById(@PathVariable Long gameId){
+    public Game deleteUserGameById(@PathVariable Long gameId) {
         return gameService.deleteUserGameById(gameId);
     }
 }
