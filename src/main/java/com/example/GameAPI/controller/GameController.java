@@ -66,4 +66,10 @@ public class GameController {
     public Game updateUserGameRatingById(@PathVariable Long gameId, @RequestBody Game gameObject) {
         return gameService.updateUserGameRatingById(gameId, gameObject);
     }
+
+    // http://localhost:9094/api/games/1
+    @DeleteMapping(path = "/games/{gameId}")
+    public Game deleteUserGameById(@PathVariable Long gameId){
+        return gameService.deleteUserGameById(gameId);
+    }
 }
