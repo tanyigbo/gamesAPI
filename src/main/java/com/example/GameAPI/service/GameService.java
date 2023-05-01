@@ -2,7 +2,6 @@ package com.example.GameAPI.service;
 
 import com.example.GameAPI.exception.InformationExistException;
 import com.example.GameAPI.model.Game;
-import com.example.GameAPI.model.Genre;
 import com.example.GameAPI.model.User;
 import com.example.GameAPI.repository.GameRepository;
 import com.example.GameAPI.security.MyUserDetails;
@@ -40,8 +39,9 @@ public class GameService {
      * Creates a new game object with the data from the provided gameObject and assigns the genre
      * If the game does not already exist, saves the new game object to the gameRepository
      * Throws and exception if a game with provided name already exists
+     *
      * @param gameObject A game object containing the date for the new entry
-     * @param genreId The id of the genre is assigned to
+     * @param genreId    The id of the genre is assigned to
      * @return The saved Game entry
      */
     public Game createGame(Game gameObject, Long genreId) {
@@ -55,7 +55,12 @@ public class GameService {
         }
     }
 
-    public List<Game> findAllGameByUser(){
+    /**
+     * Returns the list of all Games created by active user
+     *
+     * @return List of Games
+     */
+    public List<Game> findAllGamesByUser() {
         return getCurrentLoggedInUser().getGameList();
     }
 
