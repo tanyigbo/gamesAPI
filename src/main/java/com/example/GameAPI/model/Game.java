@@ -13,11 +13,8 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(unique = true)
     private String name;
-
-    @Column
-    private String publisher;
 
     @Column
     private Integer releaseYear;
@@ -41,7 +38,6 @@ public class Game {
     public Game(Long id, String name, String publisher, Integer releaseYear, Integer rating) {
         this.id = id;
         this.name = name;
-        this.publisher = publisher;
         this.releaseYear = releaseYear;
         this.rating = rating;
     }
@@ -56,14 +52,6 @@ public class Game {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
     }
 
     public Integer getReleaseYear() {
@@ -103,7 +91,6 @@ public class Game {
         return "Game{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", publisher='" + publisher + '\'' +
                 ", releaseYear=" + releaseYear +
                 ", rating=" + rating +
                 ", user=" + user +
